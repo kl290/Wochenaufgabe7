@@ -2,12 +2,7 @@ print("Taschenrechner!")
 print("Berechnungen: +, -, *, /")
 
 
-def eingabe_zahl(prompt):
-    while True:
-        try:
-            return float(input(prompt))
-        except ValueError:
-            print("Ungültige Eingabe. Bitte gib eine gültige Zahl ein.")
+from helpers import eingabe_zahl
 
 
 def addition(zahl1, zahl2):
