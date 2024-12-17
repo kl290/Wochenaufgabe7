@@ -1,4 +1,4 @@
-from helpers import eingabe_zahl
+from eingabe import eingabe_zahl
 
 
 print("Dieser Rechner berechnet die Summe, Differenz, Multiplikation und Division von 2 Zahlen.")

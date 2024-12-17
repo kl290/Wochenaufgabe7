@@ -2,7 +2,7 @@ print("Taschenrechner!")
 print("Berechnungen: +, -, *, /")
 
 
-from helpers import eingabe_zahl
+from eingabe import eingabe_zahl
 
 
 def addition(zahl1, zahl2):
