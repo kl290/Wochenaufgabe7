@@ -3,4 +3,4 @@ def eingabe_zahl(prompt):
         try:
             return float(input(prompt))
         except ValueError:
-            print("Ungültige Eingabe. Bitte eine gültige Zahl eingeben!")
+            print("Ungültige Eingabe. Bitte eine gültige Eingabe tätigen!")
