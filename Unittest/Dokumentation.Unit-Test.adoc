@@ -1,6 +1,6 @@
 == Unit Tests in Python (mit pytest)
-*_08.01.2025_: Mithilfe dieser Anleitung (https://dev-supp.de/unit-testing-python-pytest/ )
-ersten Python Unit-Test erstellt. +
+*_08.01.-10.01.2025_ : Mithilfe dieser Anleitung (https://dev-supp.de/unit-testing-python-pytest/ )
+ersten Tests (pytest) erstellt. +
 Erste Übung: +
 `def add(a, b): +
 return a + b` +
@@ -68,9 +68,9 @@ Unittest_divide.py . +
 
 
 == *Übung an Bibliotheksfunktion: (Unittest)* +
-(Hinweis: Zum Ausführen eines Unittest mit pytest folgendes
+(Hinweis: Zum Ausführen eines Unittest mit p folgendes
 im Terminal eingeben:) +
-`pytest "Datei die getestet werden soll"` +
+`python3 -m unittest test_eingabe.py` +
 ( Auf den richtigen Pfad achten, sonst wird die Datei nicht gefunden)
 
 *Test schreiben für diese Funktion:* +
@@ -137,14 +137,15 @@ beim zweiten Aufruf mit dem Wert '3.14' zurückgegeben.
 'abc' simuliert eine ungültige Eingabe, die vermutlich eine Fehlermeldung +
 auslöst oder eine Wiederholung der Eingabeaufforderung verursacht. +
 '3.14' simuliert eine gültige Eingabe, die dann weiterverarbeitet wird.
-
-+
-+
-+
-+
-+
-+
 +
 
-_Unittest im Terminal ausführbar machen mit: python3 -m unittest test_eingabe.py +
+*5. Vorgehen:* +
+Der Test soll nur dann ausgeführt werden, wenn das Skript direkt gestartet wird. +
+`if __name__ == '__main__': +
+unittest.main()` +
+
+
+
+_Unittest im Terminal ausführbar machen mit: python3 test_eingabe.py +
 Pytest im Terminal ausführbar machen mit: pytest test_eingabe.py_
+
