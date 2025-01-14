@@ -1,5 +1,5 @@
 == Unit Tests in Python (mit pytest)
-*_08.01.-10.01.2025_ : Mithilfe dieser Anleitung (https://dev-supp.de/unit-testing-python-pytest/ )
+*_08.01.-10.01.2025_: Mithilfe dieser Anleitung (https://dev-supp.de/unit-testing-python-pytest/ )
 ersten Tests (pytest) erstellt. +
 Erste Übung: +
 `def add(a, b): +
@@ -143,9 +143,75 @@ auslöst oder eine Wiederholung der Eingabeaufforderung verursacht. +
 Der Test soll nur dann ausgeführt werden, wenn das Skript direkt gestartet wird. +
 `if __name__ == '__main__': +
 unittest.main()` +
++
++
+
+*_13.01.-14.01.2025_:* +
+-Weg finden Option Float und Int +
+-einbauen von rage +
+
+Erweiterung der zahl_eingabe Funktion +
+
+`def eingabe_zahl(prompt, min_val=None, max_val=None): +
+while True: +
+try: +
+zahl = float(input(prompt))
+if zahl.is_integer(): +
+zahl = int(zahl) +
+if min_val is not None and zahl < min_val: +
+print(f"Die Zahl muss mindestens {min_val} sein!") +
+continue +
+if max_val is not None and zahl > max_val: +
+print(f"Die Zahl darf höchstens {max_val} sein!") +
+continue +
+return zahl +
+except ValueError: +
+print("Ungültige Eingabe. Bitte eine gültige Zahl eingeben!")` +
 
 
+*Funktionsdefinition und Parameter (range)* +
+`def eingabe_zahl(prompt, min_val=None, max_val=None):` +
+min_val=None und max_val=None: Diese optionalen Parameter sind dazu da,
+einen minimalen bzw. maximalen Wert zu definieren, den die Zahl haben darf.
+Sie haben standardmäßig den Wert None, was bedeutet, dass keine Einschränkungen
+auf die Zahl angewendet werden, wenn der Benutzer diese Parameter nicht angibt. +
+
+*Überprüfung des minimalen Wertes (min_val)* +
+`if min_val is not None and zahl < min_val: +
+print(f"Die Zahl muss mindestens {min_val} sein!") +
+continue` +
+
+*Überprüfung des maximalen Wertes (max_val)* +
+`if max_val is not None and zahl > max_val: +
+print(f"Die Zahl darf höchstens {max_val} sein!") +
+continue` +
+
+Möglichkeit eine range einzubauen die beispielsweise in Aufgabe 5 aus der
+Wochenaufgabe5 benötigt wird: +
+`def eingabe_zahl(prompt, min_val=1, max_val=100):` +
+
+Sobald dies nicht mehr benötigt wird, kann man es wieder ändern zu: +
+`def eingabe_zahl(prompt, min_val=None, max_val=None):`
+
+`if zahl.is_integer(): +
+zahl = int(zahl)` +
+zahl.is_integer(): Diese Methode prüft, ob der Wert in zahl eine Ganzzahl ist,
+auch wenn der Wert als Fließkommazahl (z.B. 3.0) gespeichert sein könnte.
+Sie gibt True zurück, wenn zahl eine ganze Zahl darstellt (also keine Dezimalstellen hat),
+auch wenn sie als Fließkommazahl gespeichert ist.
+
+zahl = int(zahl): Wenn die vorherige Bedingung True ergibt (also zahl eine ganze Zahl ist),
+wird der Wert von zahl explizit in einen ganzzahligen Wert umgewandelt, falls er dies
+noch nicht ist. Falls zahl z.B. den Wert 3.0 hat, wird sie durch diese Zeile
+in 3 umgewandelt, da int(3.0) den Wert 3 ergibt.
++
++
++
++
++
 
 _Unittest im Terminal ausführbar machen mit: python3 test_eingabe.py +
 Pytest im Terminal ausführbar machen mit: pytest test_eingabe.py_
+
+
 
